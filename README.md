@@ -37,12 +37,9 @@ Compile and link GeocodeLite executable with sqlite module
 g++ -std=c++17 -o geocode_lite geocode_lite.cpp sqlite3.o -pthread -ldl -O3
 ```
 
-**WSL users** : *The ip address of the entrypoint of the service will be vary between wsl instances.
-
-If you want use the server from Windows you have to find and substitute it in the first line of /Web/scripts.js file. You have to eventually change the ip port if the service will not listening to 8081.
-
-Find it by launch the command 'ip address' in an instance of the wsl window.
-* 
+**WSL users** : *The IP address of the entry point of the service will vary between Windows WSL instances.
+If you want to use the server from Windows you have to find and substitute it in the first line of /Web/scripts.js file. You have to eventually change the IP port if the service will not listen to 8081.
+Find it by launching the command 'IP address' in an instance of the WSL window.*
 
 Launch the server:
 ```
