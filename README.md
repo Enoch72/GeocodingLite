@@ -50,7 +50,7 @@ Launch the server:
 
 ### Demo page From the browser
 
-Open the browser at 127.0.0.1:8081
+Open the browser at 127.0.0.1:8081 **WSL users**: *you have to get the IP address of the WSL instance -- read note below* 
 
 Now type the location you want to search.
 
