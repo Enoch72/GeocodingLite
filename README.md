@@ -19,6 +19,16 @@ make
 ./geocode_server
 ```
 
+You can also compile from command line the server using this two commands:
+
+1) Compile sqlite module with the FTS5 module and recommended directives
+```
+gcc -DSQLITE_THREADSAFE=2 sqlite3.c -ldl -lm -c -DSQLITE_ENABLE_RTREE -DHAVE_USLEEP -DSQLITE_USE_ALLOCA -DSQLITE_OMIT_SHARED_CACHE -DSQLITE_DIRECT_OVERFLOW_READ -DSQLITE_DEFAULT_MEMSTATUS=0 -DSQLITE_ENABLE_MEMSYS5 -DSQLITE_MAX_MMAP_SIZE=0 -DSQLITE_ENABLE_FTS5 -O3
+```
+2) Compile and link GeocodeLite executable with sqlite module
+```
+g++ -std=c++17 -o geocode_lite geocode_lite.cpp sqlite3.o -pthread -ldl -O3
+```
 # Using of the service
 
 ### Demo page From the browser
