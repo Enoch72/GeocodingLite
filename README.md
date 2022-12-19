@@ -21,7 +21,7 @@ git clone https://github.com/Enoch72/GeocodingLite.git
 cd GeocodingLite
 ```
 
-unzip the GeonNames.zip to obtain the GeoNames.sqlite db:
+unzip the GeoNames.zip file to obtain the GeoNames.sqlite db file:
 ```
 unzip GeoNames.zip
 ```
