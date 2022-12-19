@@ -1,4 +1,4 @@
-MIT License
+*MODIFIED* MIT License
 
 Copyright (c) 2022 Castelli Giovanni / castelli_giovanni@libero.it
 
@@ -8,6 +8,11 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+AN ATTRIBUTION TO THE WORK MUST BE VISIBLE TO THE FINAL USER, 
+AS A MESSAGE LIKE 'GEOCODING POWERED BY GEOCODINGLITE' AND OR A 
+REFERENCE TO THIS DOCUMENT OR A LINK TO THE GITHUB REPOSOTORY:
+https://github.com/Enoch72/GeocodingLite
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
