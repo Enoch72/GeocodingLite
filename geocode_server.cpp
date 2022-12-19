@@ -146,7 +146,7 @@ bool geocode_query(SqliteDB *DB_Handle,std::string &search_query,std::string &JS
       } 
      }
     json json_result2;
-    json_result2["attribution"]= "GeocodeLite Server. Powered by feroeg.com - Data from OpenAddresses";
+    json_result2["attribution"]= "GeocodeLite Server. Powered by feroeg.com - Data from GeoNames";
     json_result2["results"]=json_result;
      
     sqlite3_clear_bindings (stmt);

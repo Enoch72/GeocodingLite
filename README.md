@@ -1,12 +1,12 @@
 # GeocodingLite
 
-GeocodingLite is the open-source geocoding server engine for getting the GPS coordinates of a city/location all around the world.  
+GeocodingLite is the open-source geocoding server engine for getting the GPS coordinates of a city/location all around the world. 
 
 # About
 
 - Written in C/C++
 - Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
-- Location data from [GeoNames](https://www.geonames.org)
+- Location data from [GeoNames](https://www.geonames.org) covers about 100 nations 
 - Powered by [Feroeg](https://feroeg.com) reverse geocoding
 
 # QuickStart (Linux / WSL)

@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+geocode_server
+
+#Sqlite archives
+GeoNames.sqlite
