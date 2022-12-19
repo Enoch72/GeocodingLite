@@ -1,6 +1,6 @@
 # GeocodingLite
 
-GeocodingLite is the opensource geocoding server engine for getting the GPS coordinates of a city/location all around the world.  
+GeocodingLite is the open-source geocoding server engine for getting the GPS coordinates of a city/location all around the world.  
 
 # About
 
@@ -64,15 +64,11 @@ Now type the location you want to search.
  
  A simple expression may be: 'IT Milano'
  
- For advanced search please read the [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine documentation related to 'MATCH' expression.
-
+ For advanced search please read the [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine documentation related to the 'MATCH' expression.
 
 # Customizations
- At this early stage the service is customizable only by changing the source code.
- 
-# Docker image
- A docker image of the service will be available on dockerhub
- 
+ At this early stage, the service is customizable only by changing the source code.
+  
 # Attribution
  
- If you use this piece of software please be fair to find the appropriate way to attribute te work, like leaving the attribution message in the text search in the demo like: "... search powered by GeocodingLite"
+If you use this piece of software, or a modified version of this, please be fair to find the appropriate way to attribute the work, like leaving the attribution message in the text search in the demo like: "... search powered by GeocodingLite" so the final user can read this.
