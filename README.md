@@ -15,10 +15,17 @@ Make sure you have installed the C++ compiler toolchain (GCC or LLVM) and git.
 
 From command prompt console:
 
-Clone the repo from github:
+Clone the repo from github and enter in the folder:
 ```
 git clone https://github.com/Enoch72/GeocodingLite.git
+cd GeocodingLite
 ```
+
+unzip the GeonNames.zip to obtain the GeoNames.sqlite db:
+```
+unzip GeoNames.zip
+```
+
 
 Compile sqlite module with the FTS5 module and recommended directives
 ```
@@ -28,7 +35,6 @@ gcc -DSQLITE_THREADSAFE=2 Libs/sqlite3.c -ldl -lm -c -DSQLITE_ENABLE_RTREE -DHAV
 Compile and link GeocodeLite executable with sqlite module
 ```
 g++ -std=c++17 -o geocode_lite geocode_lite.cpp sqlite3.o -pthread -ldl -O3
-./geocode_server
 ```
 
 **WSL users** : *The ip address of the entrypoint of the service will be vary between wsl instances.
@@ -37,7 +43,6 @@ If you want use the server from Windows you have to find and substitute it in th
 
 Find it by launch the command 'ip address' in an instance of the wsl window.
 * 
-
 
 Launch the server:
 ```
@@ -70,4 +75,4 @@ Now type the location you want to search.
  
 # Attribution
  
- If you use this piece of software commercially an attiribution message is required es: "powered by GeocodingLite" in the text search.
+ If you use this piece of software please be fair to find the appropriate way to attribute te work, like leaving the attribution message in the text search in the demo like: "... search powered by GeocodingLite"
