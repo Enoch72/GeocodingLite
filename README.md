@@ -6,7 +6,7 @@ GeocodingLite is the open-source geocoding server engine for getting the GPS coo
 
 - Written in C/C++
 - Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
-- Location data from [OpenAddresses](https://openaddresses.io/)
+- Location data from [GeoNames](https://www.geonames.org)
 - Powered by [Feroeg](https://feroeg.com) reverse geocoding
 
 # QuickStart (Linux / WSL)
