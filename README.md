@@ -34,7 +34,7 @@ gcc -DSQLITE_THREADSAFE=2 Libs/sqlite3.c -ldl -lm -c -DSQLITE_ENABLE_RTREE -DHAV
 
 Compile and link GeocodeLite executable with sqlite module
 ```
-g++ -std=c++17 -o geocode_lite geocode_lite.cpp sqlite3.o -pthread -ldl -O3
+g++ -std=c++17 -o geocode_lite geocode_server.cpp sqlite3.o -pthread -ldl -O3
 ```
 
 **WSL users** : *The IP address of the entry point of the service will vary between Windows WSL instances.
