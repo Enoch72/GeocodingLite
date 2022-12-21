@@ -40,7 +40,8 @@ g++ -std=c++17 -o geocode_lite geocode_server.cpp sqlite3.o -pthread -ldl -O3
 **WSL users** : *The IP address of the entry point of the service will vary between Windows WSL instances.
 If you want to use the server from Windows you have to find and substitute it in the first line of /Web/scripts.js file.
 Find it by launching the command 'ip address' in an instance of the WSL window. You have to eventually change the IP port if the service will not listen to 8081 (if you have modified the source code).*
-Eventually find the address ip of you WSL instance :
+
+Eventually find the address ip of you WSL instance and substitute it in the Web/scripts.js file:
 ```
 ip address
 ```
