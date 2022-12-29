@@ -34,33 +34,26 @@ gcc -DSQLITE_THREADSAFE=2 Libs/sqlite3.c -ldl -lm -c -DSQLITE_ENABLE_RTREE -DHAV
 
 Compile and link GeocodeLite executable with sqlite module
 ```
-g++ -std=c++17 -o geocode_lite geocode_server.cpp sqlite3.o -pthread -ldl -O3
+g++ -std=c++17 -o GeocodingLite geocode_server.cpp sqlite3.o -pthread -ldl -O3
 ```
 
-**WSL users** : *The IP address of the entry point of the service will vary between Windows WSL instances.
-If you want to use the server from Windows you have to find and substitute it in the first line of /Web/scripts.js file.
-Find it by launching the command 'ip address' in an instance of the WSL window. You have to eventually change the IP port if the service will not listen to 8081 (if you have modified the source code).*
-
-Eventually find the address ip of you WSL instance and substitute it in the Web/scripts.js file:
+Launch the GeocodingLite server:
 ```
-ip address
-```
-
-Launch the server:
-```
-./geocode_server
+./GeocodingLite
 ```
 
 # Using of the service
 
-### Demo page From the browser
+## Demo page From the browser
 
-Open the browser at 127.0.0.1:8081 **WSL users**: *you have to get the IP address of the WSL instance -- read note below* 
+Open the browser at 127.0.0.1:8081 
 
 Now type the location you want to search.
 
+**WSL users**: *maybe you have to get the IP address of the WSL instance if you local browser doesn't show the page -- get it (launch the ip address command from the shell) and substitute the address in the Web/script.js file* 
 
-### Calling the search API engine of the server
+
+## Calling the search API engine of the server
 
  http:127.0.0.1:8081/geocode?query=**search expression**
  
@@ -71,6 +64,6 @@ Now type the location you want to search.
 # Customizations
  At this early stage, the service is customizable only by changing the source code.
   
-# Attribution
+# License - Attribution 
  
-If you use this piece of software, or a modified version of this, please be fair to find the appropriate way to attribute the work, like leaving the attribution message in the text search in the demo like: "... search powered by GeocodingLite" so the final user can read this.
+If you use this piece of software, or a modified version of this, please be fair to find the appropriate way to attribute the work. Like in the HTML demo : "... geocoding search powered by GeocodingLite" so the *user is aware* about the source of this work and eventually provide the link of this repo.

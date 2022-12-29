@@ -112,6 +112,9 @@ bool geocode_query(SqliteDB *DB_Handle,std::string &search_query,std::string &JS
    {
     sqlite3_bind_text(stmt,1,search_query.c_str(),search_query.length(),NULL);
     json json_result;
+    json_result.push_back(1);
+    json_result.clear();
+    
     std::string last_line;
     while ( sqlite3_step(stmt) == SQLITE_ROW )
      {
@@ -145,8 +148,10 @@ bool geocode_query(SqliteDB *DB_Handle,std::string &search_query,std::string &JS
        json_result.push_back(json_line); 
       } 
      }
+    
     json json_result2;
     json_result2["attribution"]= "GeocodeLite Server. Powered by feroeg.com - Data from GeoNames.org";
+    
     json_result2["results"]=json_result;
      
     sqlite3_clear_bindings (stmt);
@@ -185,23 +190,8 @@ int main (int argc, char *argv[])
   HandlePool *OpenAddressesPool;
 
   std::string geocode_file = "./GeoNames.sqlite";
-  
- /**
-  if (argc==3 && !strcmp(argv[1],"ini_path"))
-    {
-      INIReader   IniFile(argv[2]);
-      if (IniFile.ParseError())
-       {
-        std::cout << "IniFile - Error on parse ini file - " << argv[2] << std::endl;
-        exit(1);
-       }
-      
-      georef_file   = IniFile.Get("FEROEG_PATHS", "GEOREF_FILE"    , osm_dir);
-      
-    }
-    **/
 
-  std::cout << "Starting up geocode server. " << std::endl;
+  std::cout << "Starting up GeocodingLite server. " << std::endl;
   std::cout << "Geocode db  file:" << geocode_file << std::endl;
   int numpool = std::thread::hardware_concurrency();
   
@@ -220,22 +210,23 @@ int main (int argc, char *argv[])
   std::cout << "Creating an http server instance with " << numpool << " worker threads." << std::endl;
   Server svr(numpool);
  
+  // Set the geocoding callback 
   svr.Get("/geocode", [OSMPool](const Request & req, Response &res) {
    auto clock      = std::chrono::system_clock::now();
    std::string JSON_Result,search_query; 
    std::cout << "GeocodeRequest: "  << req.path <<  std::endl;
    if ( ValidateGeocodeRequest(req,search_query) )
-   {
-     SqliteDB *DB_Handle = (SqliteDB *) OSMPool->AcquireHandle();
-     geocode_query(DB_Handle,search_query,JSON_Result); 
-     OSMPool->ReleaseHandle(DB_Handle);
-     std::cout << JSON_Result << std::endl;
-     int count = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now()-clock).count();
-     std::cout << "Query resolved in " << std::dec << count << " ms" << std::endl;    
-     res.set_header("Access-Control-Allow-Origin","*");
-     res.set_content(JSON_Result, "application/json; charset=utf-8");
-   }
-  } ); // Svr.Get
+    {
+      SqliteDB *DB_Handle = (SqliteDB *) OSMPool->AcquireHandle();
+      geocode_query(DB_Handle,search_query,JSON_Result); 
+      OSMPool->ReleaseHandle(DB_Handle);
+      std::cout << JSON_Result << std::endl;
+      int count = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now()-clock).count();
+      std::cout << "Query resolved in " << std::dec << count << " ms" << std::endl;    
+      res.set_header("Access-Control-Allow-Origin","*");
+      res.set_content(JSON_Result, "application/json; charset=utf-8");
+    }
+  } ); 
 
   // Configuring path for serve web pages/files
   std::cout << "Mount web pages at the relative path of: ./" << std::endl;
@@ -243,7 +234,7 @@ int main (int argc, char *argv[])
 
   // Starts web server
   std::cout << "Starting Web server on port 8081" << std::endl;
-  std::cout << "API ENDPOINT: HTTP:x.x.x.x:8081/geocode?query=[search expression]" << std::endl; 
+  std::cout << "API ENDPOINT: HTTP//:x.x.x.x:8081/geocode?query=[search expression]" << std::endl; 
   if (!svr.listen("0.0.0.0", 8081) )
     {
        std::cout << "Failed!" << std::endl;
@@ -256,10 +247,10 @@ int main (int argc, char *argv[])
 
 You can compile from command line the server using this two commands:
 
-1) Compile sqlite module 
+1) ** Compile sqlite module with fts5 extension enabled
 gcc -DSQLITE_THREADSAFE=2 Libs/sqlite3.c -ldl -lm -c -DSQLITE_ENABLE_RTREE -DHAVE_USLEEP -DSQLITE_USE_ALLOCA -DSQLITE_OMIT_SHARED_CACHE -DSQLITE_DIRECT_OVERFLOW_READ -DSQLITE_DEFAULT_MEMSTATUS=0 -DSQLITE_ENABLE_MEMSYS5 -DSQLITE_MAX_MMAP_SIZE=0 -DSQLITE_ENABLE_FTS5 -O3
 
-2) Compile and link GeocodeLite executable
+2) ** Compile and link GeocodeLite executable
 g++ -std=c++17 -o geocode_lite geocode_lite.cpp sqlite3.o -pthread -ldl -O3
  
  **/

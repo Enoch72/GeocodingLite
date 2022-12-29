@@ -28,6 +28,6 @@ new Autocomplete('#autocomplete', {
     // Here we set the action afer a value was selected 
     onSubmit: result => {
         alert('The coordinates of ' + result.NATION + ' ' + result.PLACE_NAME +
-            ' are :' + result.LATITUDE + '  ' + result.LONGITUDE);
+            ' are : ' + result.LATITUDE + '  ' + result.LONGITUDE);
     }
 });
