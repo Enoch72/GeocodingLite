@@ -66,4 +66,4 @@ Now type the location you want to search.
   
 # License - Attribution 
  
-If you use this piece of software, or a modified version of this, please be fair to find the appropriate way to attribute the work. Like in the HTML demo : "... geocoding search powered by GeocodingLite" so the *user is aware* about the source of this work and eventually provide the link of this repo.
+If you use this piece of software, or a modified version of this, please be fair to find the appropriate way to attribute the work. Like in the HTML demo : "... geocoding search powered by GeocodingLite" so the **user is aware** about the source of this work and eventually provide the link of this repo.
