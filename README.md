@@ -46,16 +46,16 @@ Launch the GeocodingLite server:
 
 ## Demo page From the browser
 
-Open the browser at 127.0.0.1:8081 
+Open the browser at 127.0.0.1:8081 (or test the same service @ www.feroeg.com/Demo.html)
 
-Now type the location you want to search.
+Now type the location you want to search in the search box.
 
 **WSL users**: *maybe you have to get the IP address of the WSL instance if you local browser doesn't show the page -- get it (launch the ip address command from the shell) and substitute the address in the Web/script.js file* 
 
 
 ## Calling the search API engine of the server
 
- http:127.0.0.1:8081/geocode?query=**search expression**
+ http:127.0.0.1:8081/geocode?query=**[search expression]** (or test the same endpoint @ www.feroeg.com/geocode?query=...)
  
  A simple expression may be: 'IT Milano'
  
