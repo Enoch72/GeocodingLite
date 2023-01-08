@@ -9,7 +9,7 @@ GeocodingLite is the open-source geocoding server engine for getting the GPS coo
 - Location data from [GeoNames](https://www.geonames.org) covers about 100 nations 
 - Powered by [Feroeg](https://feroeg.com) reverse geocoding
 
-# QuickStart (Linux / WSL)
+# How to build (Linux / WSL)
 
 Make sure you have installed the C++ compiler toolchain (GCC or LLVM) and git.
 
@@ -46,7 +46,7 @@ Launch the GeocodingLite server:
 
 ## Demo page From the browser
 
-Open the browser at 127.0.0.1:8081 (or test the same service @ www.feroeg.com/Demo.html)
+Open the browser at localhost:8081 (or test the same service @ www.feroeg.com/Demo.html)
 
 Now type the location you want to search in the search box.
 
@@ -55,11 +55,34 @@ Now type the location you want to search in the search box.
 
 ## Calling the search API engine of the server
 
- http:127.0.0.1:8081/geocode?query=**[search expression]** (or test the same endpoint @ www.feroeg.com/geocode?query=...)
+ http://localhost:8081/geocode?query=**[search expression]** (or test the same endpoint @ www.feroeg.com/geocode?query=...)
  
- A simple expression may be: 'IT Milano'
- 
+ A simple expression may be: 'IT Milano' 
+ We suggest to specify the iso2 nation code followed by the place name
+
  For advanced search please read the [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine documentation related to the 'MATCH' expression.
+
+# Docker
+ 
+ You can build a docker image (geocodinglite) of the server just running
+
+```
+docker build -t geocodinglite .
+```
+ 
+ You can create an optimized image (geocodinglite-slim) of the dockerized server running the docker-slim utility:
+
+```
+ docker-slim build --target geocodinglite --tag geocodinglite-slim
+```
+# Quickstart - Download from dockerhub and run an image of the container 
+
+Download the container and test it:  
+
+```
+docker pull enoch72/geocodinglite:slim
+docker run --name mygeocodinglite -p 8081:8081 -d enoch72/geocodinglite:slim
+```
 
 # Customizations
  At this early stage, the service is customizable only by changing the source code.
