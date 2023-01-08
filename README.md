@@ -75,7 +75,7 @@ docker build -t geocodinglite .
 ```
  docker-slim build --target geocodinglite --tag geocodinglite-slim
 ```
-# Quickstart - Download from dockerhub and run an image of the container 
+# Quickstart - Download from Docker Hub 
 
 Download the container and test it:  
 
