@@ -36,3 +36,5 @@ geocode_server
 GeoNames.sqlite
 GeoNames.sqlite2
 geocode_server
+GeocodingLite
+geocode_server
