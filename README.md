@@ -1,6 +1,6 @@
 # GeocodingLite
 
-GeocodingLite is the open-source geocoding server engine for getting the GPS coordinates of a city/location all around the world. 
+GeocodingLite is the open-source geocoding server engine for getting the GPS coordinates of a city/location all around the world. You can get also postal codes. 
 
 # About
 
@@ -55,10 +55,12 @@ Now type the location you want to search in the search box.
 
 ## Calling the search API engine of the server
 
- http://localhost:8081/geocode?query=**[search expression]** (or test the same endpoint @ www.feroeg.com/geocode?query=...)
+ http://localhost:8081/geocode?query=search-expression or test the same endpoint at our test server @ https://www.feroeg.com/geocode?query=search-expression
  
  A simple expression may be: 'IT Milano' 
  We suggest to specify the iso2 nation code followed by the place name
+ The nation code will filters the alias, presents in other country
+
 
  For advanced search please read the [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine documentation related to the 'MATCH' expression.
 
