@@ -8,7 +8,7 @@ GeocodingLite is the open-source geocoding search engine for getting the GPS coo
 - Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
 - Location data from [GeoNames](https://www.geonames.org) covers about 100 nations 
 - Powered by [Feroeg](https://feroeg.com) reverse geocoding
-- Simple HTTP/JSON search API interface
+- Simple HTTP/JSON search API interface (EX: https://www.feroeg.com/geocode?query=US New York)
 
 # How to build (Linux / WSL)
 
