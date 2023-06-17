@@ -8,7 +8,7 @@ GeocodingLite is the open-source geocoding search engine for getting the GPS coo
 - Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
 - Location data from [GeoNames](https://www.geonames.org) covers about 100 nations 
 - Powered by [Feroeg](https://feroeg.com) reverse geocoding
-- Simple HTTP/JSON search API interface (EX: https://www.feroeg.com/geocode?query=US New York)
+- Simple HTTP/JSON search API interface like: [https://www.feroeg.com/geocode?query=US New York](<https://www.feroeg.com/geocode?query=US New York>)
 
 # How to build (Linux / WSL)
 
@@ -58,7 +58,7 @@ Now type the location you want to search in the search box.
 
  http://localhost:8081/geocode?query=search-expression or test the same endpoint at our test server @ https://www.feroeg.com/geocode?query=search-expression
  
- A simple expression may be: 'IT Milano' 
+ A simple expression may be: 'US New York' or 'IT Milano'
  We suggest to specify the iso2 nation code followed by the place name
  The nation code will filters the alias, presents in other country
 
