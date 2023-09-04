@@ -3,12 +3,12 @@
 GeocodingLite is the open-source geocoding search engine for getting the GPS coordinates of a city/location all around the world. You can get also postal codes. 
 
 # About
-
-- Written in C/C++
-- Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
-- Location data from [GeoNames](https://www.geonames.org) covers about 100 nations 
-- Powered by [Feroeg](https://feroeg.com) reverse geocoding
 - Simple HTTP/JSON search API interface like: [https://www.feroeg.com/geocode?query=US New York](<https://www.feroeg.com/geocode?query=US New York>)
+- Location data from [GeoNames](https://www.geonames.org) covers about 100 nations ( +1.5M centroids/city )
+- Based on [Sqlite FTS5](https://www.sqlite.org/fts5.html) search engine
+- Written in C/C++
+
+- Powered by [Feroeg](https://feroeg.com) reverse geocoding
 
 # How to build (Linux / WSL)
 
